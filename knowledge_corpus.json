@@ -1,0 +1,138 @@
+{
+  "candidate": {
+    "name": "Yash Khunteta",
+    "title": "Generative AI Engineer & AI/ML Engineer",
+    "contact": {
+      "phone": "+91-8005656598",
+      "email": "yashkhunteta1234@gmail.com",
+      "linkedin": "linkedin.com/in/yashkhunteta",
+      "github": "github.com/yashkhunteta",
+      "location": "Jaipur, India"
+    },
+    "summary": "AI/ML Engineer with experience building RAG pipelines, multi-agent LLM systems, and ML models from scratch to deployment. Built a reusable RAG benchmarking framework that cut evaluation time by 60% at Genpact.",
+    "skills": {
+      "GenAI": "RAG, Fine-Tuning, Embeddings, Prompt Engineering, Vector Databases (FAISS, ChromaDB), Semantic Search",
+      "LLM Stack": "LangChain, LangGraph, Hugging Face Transformers, OpenAI API, RAGAS, Multi-Agent Systems",
+      "ML / DL": "scikit-learn, TensorFlow, Keras, NLP, YOLO, Model Evaluation, Inference Optimisation",
+      "Cloud & Infra": "Azure AI Document Intelligence, Azure OCR, Docker (basic), Git, Jupyter, VS Code",
+      "Languages": "Python, SQL, JavaScript"
+    },
+    "experience": [
+      {
+        "role": "Engineering Trainee \u2014 AI/ML Analytics",
+        "company": "NIIT Organization",
+        "location": "Jaipur",
+        "period": "Oct 2025 \u2013 Present",
+        "details": [
+          "Built AI agents integrated into live ERP tabs to handle student queries, automate task suggestions, and simplify navigation \u2014 reducing manual support load.",
+          "Worked with the product team to connect agent outputs to existing enterprise workflows, handling edge cases and keeping latency acceptable for classroom use."
+        ]
+      },
+      {
+        "role": "Data Scientist Intern",
+        "company": "Genpact",
+        "location": "Bengaluru",
+        "period": "Jan 2025 \u2013 Jun 2025",
+        "details": [
+          "Built a modular RAG pipeline that any LLM could plug into, with automated scoring across 10+ metrics (RAGAS, heuristics) \u2014 cut benchmarking time by 60%.",
+          "Fine-tuned embedding models and tested different chunking and retrieval strategies to improve answer relevance for specific document types.",
+          "Set up Azure AI Document Intelligence and OCR workflows to extract structured data from unstructured enterprise documents."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech Computer Science \u2014 Data Science",
+        "institution": "NIT University, Neemrana",
+        "period": "2021 \u2013 2025",
+        "score": "CGPA: 7.48"
+      },
+      {
+        "degree": "Higher Secondary (10+2), PCM",
+        "institution": "Subodh Public School, Jaipur",
+        "period": "2021",
+        "score": "12th: 79%, 10th: 78%"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "AttendAI",
+      "description": "A modern, full-stack remote employee attendance and automated payroll system powered by AI notifications.",
+      "tech_stack": "FastAPI, SQLite / MS SQL Server, React (Vite), Vanilla CSS, Nginx, Docker-compose",
+      "purpose": "Automate remoteness verification, check-in rules enforcement, leave management, and payroll calculations. Features AI notifications for late check-ins, anomalies, and leave balances.",
+      "tradeoffs": [
+        "Chose SQLite for easy out-of-the-box local demo setup, but implemented database-agnostic SQLAlchemy models supporting seamless switch to Microsoft SQL Server.",
+        "Chose inline check-in trigger calculation for payroll deductions/overtime instead of heavy background worker jobs to achieve zero-latency responses for the employee check-in button.",
+        "Implemented custom sliding-window rate limiters on AI chat/endpoints directly in FastAPI rather than Nginx/Redis to allow standalone project deployment without complex infrastructure dependencies."
+      ],
+      "what_to_do_differently": [
+        "Integrate face recognition checking (WebRTC) via front-end camera to prevent buddy-punching.",
+        "Move email notifications (SMTP) to a Celery + Redis background task queue so email network delays don't slow down check-in API responses."
+      ],
+      "readme": "# AttendAI \u2014 AI-Powered Attendance & Payroll System\n\nA modern, full-stack internal web application for remote employee attendance tracking and automated payroll calculation, powered by AI.\n\n---\n\n## \ud83d\ude80 Quick Start (Development)\n\n### Prerequisites\n- Python 3.11+\n- Node.js 20+\n- pip\n\n### 1. Backend Setup\n\n```bash\ncd backend\n\n# Copy and configure environment\ncp .env.example .env\n# Edit .env with your settings (AI API key, etc.)\n\n# Install dependencies\npip install -r requirements.txt\n\n# Seed demo data (creates SQLite DB with sample employees)\npython seed.py\n\n# Start backend\nuvicorn main:app --reload --port 8000\n```\n\nBackend runs at: http://localhost:8000  \nAPI docs: http://localhost:8000/docs\n\n### 2. Frontend Setup\n\n```bash\ncd frontend\n\n# Install dependencies\nnpm install\n\n# Start frontend\nnpm run dev\n```\n\nFrontend runs at: http://localhost:5173\n\n---\n\n## \ud83d\udd11 Demo Login Credentials\n\n| Role | Email | Password |\n|------|-------|----------|\n| **HR Admin** | hr@company.com | Admin@123 |\n| **Employee 1** | john.doe@company.com | Employee@123 |\n| **Employee 2** | jane.smith@company.com | Employee@123 |\n| **Employee 3** | mike.wilson@company.com | Employee@123 |\n| **Employee 4** | emily.davis@company.com | Employee@123 |\n| **Employee 5** | robert.brown@company.com | Employee@123 |\n\n---\n\n## \ud83e\udd16 AI Configuration\n\nChange AI provider by editing `.env` \u2014 **no code changes needed**:\n\n### Google Gemini\n```env\nAI_PROVIDER=gemini\nAI_MODEL=gemini-1.5-flash\nAI_API_KEY=your_gemini_key\n```\n\n### OpenAI (GPT-4)\n```env\nAI_PROVIDER=openai\nAI_MODEL=gpt-4o\nAI_API_KEY=your_openai_key\n```\n\n### Anthropic Claude\n```env\nAI_PROVIDER=anthropic\nAI_MODEL=claude-3-5-sonnet-20241022\nAI_API_KEY=your_anthropic_key\n```\n\n### Azure OpenAI\n```env\nAI_PROVIDER=azure_openai\nAI_MODEL=gpt-4o\nAI_API_KEY=your_azure_key\nAZURE_ENDPOINT=https://your-resource.openai.azure.com/\nAZURE_DEPLOYMENT=your-deployment-name\n```\n\n### Local Ollama (Free, No Key)\n```env\nAI_PROVIDER=openai_compatible\nAI_MODEL=llama3\nAI_API_KEY=ollama\nAI_BASE_URL=http://localhost:11434/v1\n```\n\n---\n\n## \ud83d\uddc4\ufe0f Switching to SQL Server (SSMS)\n\nCurrently using SQLite for demo. To switch to SQL Server:\n\n1. Install ODBC Driver 17 for SQL Server\n2. Update `.env`:\n```env\nDATABASE_URL=mssql+pyodbc://username:password@server/AttendanceDB?driver=ODBC+Driver+17+for+SQL+Server\n```\n3. Restart the backend \u2014 tables will be created automatically\n\n---\n\n## \ud83d\udd10 OAuth Setup (Optional)\n\n### Google OAuth\n1. Go to [Google Cloud Console](https://console.cloud.google.com/)\n2. Create OAuth 2.0 credentials\n3. Add `http://localhost:8000/auth/google/callback` as authorized redirect URI\n4. Add to `.env`:\n```env\nGOOGLE_CLIENT_ID=xxx.apps.googleusercontent.com\nGOOGLE_CLIENT_SECRET=GOCSPX-xxx\n```\n\n### Microsoft OAuth\n1. Go to [Azure App Registrations](https://portal.azure.com/)\n2. Register a new app\n3. Add `http://localhost:8000/auth/microsoft/callback` as redirect URI\n4. Add to `.env`:\n```env\nMICROSOFT_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\nMICROSOFT_CLIENT_SECRET=xxx\n```\n\n---\n\n## \ud83d\udce7 Email Notifications (Optional)\n\nFor AI warning emails, configure SMTP in `.env`:\n```env\nSMTP_HOST=smtp.gmail.com\nSMTP_PORT=587\nSMTP_USER=your@gmail.com\nSMTP_PASSWORD=your_app_password  # Use Gmail App Password, not account password\nEMAIL_FROM=HR System <hr@company.com>\n```\n\n---\n\n## \ud83d\udc33 Docker Deployment\n\n```bash\n# Copy and configure environment\ncp backend/.env.example backend/.env\n# Edit backend/.env\n\n# Build and start all services\ndocker-compose up -d --build\n\n# Seed demo data\ndocker-compose exec backend python seed.py\n```\n\nAccess at: http://localhost (port 80)\n\n---\n\n## \ud83d\udcc1 Project Structure\n\n```\nattendance-payroll-system/\n\u251c\u2500\u2500 backend/\n\u2502   \u251c\u2500\u2500 main.py                 # FastAPI app entry point\n\u2502   \u251c\u2500\u2500 config.py               # Settings (pydantic-settings)\n\u2502   \u251c\u2500\u2500 seed.py                 # Demo data seeder\n\u2502   \u251c\u2500\u2500 requirements.txt\n\u2502   \u251c\u2500\u2500 database/\n\u2502   \u2502   \u251c\u2500\u2500 db.py              # SQLAlchemy engine\n\u2502   \u2502   \u2514\u2500\u2500 models.py          # All ORM models\n\u2502   \u251c\u2500\u2500 auth/                  # JWT + OAuth authentication\n\u2502   \u251c\u2500\u2500 employees/             # Employee CRUD\n\u2502   \u251c\u2500\u2500 attendance/            # Check-in/out, rules engine\n\u2502   \u251c\u2500\u2500 leave/                 # Leave management\n\u2502   \u251c\u2500\u2500 payroll/               # Payroll calculation\n\u2502   \u251c\u2500\u2500 ai/                    # AI provider abstraction + chatbot\n\u2502   \u2502   \u2514\u2500\u2500 providers/         # Gemini, OpenAI, Anthropic, Azure, Compatible\n\u2502   \u251c\u2500\u2500 notifications/         # In-app + email notifications\n\u2502   \u2514\u2500\u2500 reports/               # Excel + PDF export\n\u251c\u2500\u2500 frontend/\n\u2502   \u2514\u2500\u2500 src/\n\u2502       \u251c\u2500\u2500 pages/\n\u2502       \u2502   \u251c\u2500\u2500 employee/      # Dashboard, Attendance, Leave, Payroll, AIChat\n\u2502       \u2502   \u2514\u2500\u2500 hr/            # Dashboard, Employees, Attendance, Leaves, Payroll, Reports\n\u2502       \u251c\u2500\u2500 components/        # Reusable UI components\n\u2502       \u251c\u2500\u2500 services/          # API clients (axios)\n\u2502       \u251c\u2500\u2500 context/           # Auth context\n\u2502       \u2514\u2500\u2500 hooks/             # Custom React hooks\n\u251c\u2500\u2500 nginx/\n\u2502   \u2514\u2500\u2500 nginx.conf             # Reverse proxy config\n\u2514\u2500\u2500 docker-compose.yml\n```\n\n---\n\n## \ud83e\uddee Payroll Formula\n\n```\nPer Day Salary    = Monthly Salary / Total Working Days\nDeductions        = (Unpaid Leaves \u00d7 Per Day) + (Half Days \u00d7 Per Day \u00d7 0.5)\nOvertime Pay      = Overtime Hours \u00d7 (Per Day / 8) \u00d7 1.5\nFinal Salary      = Monthly Salary - Deductions + Overtime Pay + Bonuses\n```\n\n---\n\n## \u2699\ufe0f Attendance Rules (Configurable in .env)\n\n| Condition | Status |\n|-----------|--------|\n| Check-in after 09:30 AM | Late |\n| Work hours \u2265 9 hours | Overtime |\n| Work hours \u2265 8 hours | Full Day |\n| Work hours 4\u20138 hours | Half Day |\n| Work hours < 4 hours | Half Day |\n| No check-in | Absent |\n\n---\n\n## \ud83d\udee1\ufe0f AI Warning Notifications\n\nThe AI automatically sends notifications when:\n- Employee checks in late\n- 3+ late logins in a month (escalation)\n- Absent for the day (end of day check)\n- Suspicious attendance patterns detected\n- Leave balance drops below 2 days\n\nNotifications appear in-app (bell icon) and optionally via email.\n\n---\n\n## \ud83d\udcca Features\n\n| Feature | Employee | HR |\n|---------|----------|-----|\n| Attendance check-in/out | \u2705 | - |\n| View own attendance | \u2705 | - |\n| Leave application | \u2705 | - |\n| AI chatbot | \u2705 | - |\n| View salary | \u2705 | - |\n| Manage all employees | - | \u2705 |\n| Approve/reject leaves | - | \u2705 |\n| Generate payroll | - | \u2705 |\n| View analytics | - | \u2705 |\n| Export reports | - | \u2705 |\n| AI anomaly detection | - | \u2705 |\n| Send notifications | - | \u2705 |\n\n---\n\n## \ud83d\udd12 Security\n\n- JWT-based authentication (configurable expiry)\n- bcrypt password hashing\n- Role-based access control (employee / hr)\n- CORS configured for frontend origin\n- All sensitive data in environment variables\n",
+      "github_url": "github.com/yashkhunteta/attend-ai-hub"
+    },
+    {
+      "name": "Fake News Detector App",
+      "description": "Machine learning system that predicts whether a given article contains fake news.",
+      "tech_stack": "Flask Framework, scikit-learn, PassiveAggressiveClassifier, TF-IDF Vectorizer",
+      "purpose": "A lightweight, online-learning text classification app deployed on Heroku to detect fake news articles.",
+      "tradeoffs": [
+        "Chose PassiveAggressiveClassifier because of its speed and incremental learning capability (scales nicely with high text volume), trading off the deeper contextual semantic understanding of complex deep learning models like transformers.",
+        "Used TF-IDF representation instead of word embeddings to minimize server memory footprint on Heroku free-tier instances."
+      ],
+      "what_to_do_differently": [
+        "Fine-tune a pre-trained transformer model (like DistilBERT) to understand context and detect nuanced, synthetically generated misinformation.",
+        "Build a scraper that automatically fetches news updates to constantly update the classification database."
+      ],
+      "readme": "# Fake-News-Detector-App\n\nFake news prediction using **Machine Learning algorithms and Flask Framework**.\n\nEnter your text or generate a random one from our dataset to try it.\n\nThe text is first preprocessed and transformed as a vector. Then, the transformed vector is feeded to the trained model to be classified as fake or not fake.\n<<<<<<< HEAD\n\nDeployed on - **Heroku** : https://fake-news-detector-flask.herokuapp.com/\n\n<img src=\"https://github.com/GitTeaching/Fake-News-Detector-App/blob/master/static/images/screenshot.png\" width=800/>\n=======\n>>>>>>> 6097e93ed80df465389b2c6a559379f9ed973fbf\n",
+      "github_url": "github.com/yashkhunteta/Fake-News-Detector-App"
+    },
+    {
+      "name": "peoplegpt-100x",
+      "description": "ATS resume parser and smart scoring backend to screen candidates.",
+      "tech_stack": "LangChain, LangChain-Groq, LangChain-OpenAI, DuckDB, python-docx, pdfplumber, pyresparser, scikit-learn, uv package manager",
+      "purpose": "Parse candidate resumes (PDF, docx) and evaluate their education, work experience, projects, language, and fit with strict multi-dimensional smart scoring metrics.",
+      "tradeoffs": [
+        "Chose DuckDB as the resume parsing metadata database because of its lightning-fast analytical query performance and zero-dependency configuration, sacrificing multi-user concurrent write scaling for high-speed local evaluation.",
+        "Leveraged Groq API for sub-second LLM inference, sacrificing the higher reasoning capabilities of larger models like Claude 3.5 Sonnet to minimize pipeline latency."
+      ],
+      "what_to_do_differently": [
+        "Integrate a vector database (like Qdrant or Milvus) to enable semantic search across millions of parsed candidates rather than relying on on-the-fly comparisons.",
+        "Add automated candidate screening feedback email triggers using SMTP to send immediate updates to applicants."
+      ],
+      "github_url": "github.com/yashkhunteta/peoplegpt-100x"
+    },
+    {
+      "name": "brewpass-saas",
+      "description": "Two-sided loyalty SaaS backend and dashboard engine for coffee shops.",
+      "tech_stack": "Express, Node.js, JWT, PostgreSQL, pg, Razorpay APIs, MSG91 APIs",
+      "purpose": "Power customer loyalty point tracking, subscription tiers, invoicing, and merchant dashboards.",
+      "tradeoffs": [
+        "Used raw PostgreSQL queries through 'pg' driver instead of an ORM (like Prisma or Sequelize) to optimize execution speed, minimize memory usage, and keep full control over query performance.",
+        "Used local JWT signature verification to avoid roundtrips to an identity provider, trading off the ability to instantly revoke individual user sessions without a blacklist."
+      ],
+      "what_to_do_differently": [
+        "Rewrite with TypeScript and an ORM like Prisma for type-safe database schemas and better developer velocity.",
+        "Add Redis cache layers for dashboard analytics queries to prevent heavy database load as coffee shops scale."
+      ],
+      "github_url": "github.com/yashkhunteta/brewpass-saas"
+    },
+    {
+      "name": "Academic Task Learning Agent",
+      "description": "Graph-based multi-agent academic co-pilot using state management.",
+      "tech_stack": "LangGraph, LangChain, Python",
+      "purpose": "4-agent architecture (Planner, Notewriter, Advisor, Coordinator) that collaborates to help students with task planning, note-taking, and study advice.",
+      "tradeoffs": [
+        "Chose LangGraph to build structured state-sharing workflows rather than linear LLM chains, enabling complex cyclic loops and routing but increasing state complexity.",
+        "Chose in-memory state checkpointing for quick state passing, trading off persistence across server restarts."
+      ],
+      "what_to_do_differently": [
+        "Implement a persistent SQLite-backed checkpointer to allow students to pause and resume multi-agent conversations days later.",
+        "Implement parallel execution of independent node steps (like Planner and Advisor) to speed up response time."
+      ],
+      "github_url": "github.com/yashkhunteta/academic-task-learning-agent"
+    }
+  ]
+}
