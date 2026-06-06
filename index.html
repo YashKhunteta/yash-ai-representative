@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Khunteta — AI Representative & Candidate Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="app-container">
+        
+        <!-- Left Column: Profile Card & Calendar Scheduler -->
+        <aside class="profile-sidebar glass">
+            <header class="profile-header">
+                <div class="avatar-glow">YK</div>
+                <h1>Yash Khunteta</h1>
+                <p class="subtitle">Generative AI & LLM Systems Engineer</p>
+                <div class="location-tag">
+                    <span class="icon">📍</span> Jaipur, India
+                </div>
+            </header>
+
+            <section class="quick-info">
+                <h3>Technical Core</h3>
+                <div class="badge-cloud">
+                    <span class="badge">LLM Agents</span>
+                    <span class="badge">RAG Systems</span>
+                    <span class="badge">LangGraph</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Vector DBs</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">scikit-learn</span>
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section class="scheduler-section">
+                <h3>📅 Book an Interview</h3>
+                <p class="section-desc">Select a date to check Yash's availability and book a slot instantly.</p>
+                
+                <div class="calendar-inputs">
+                    <input type="date" id="booking-date" class="input-field" min="">
+                    <button id="check-slots-btn" class="btn btn-secondary">Check Slots</button>
+                </div>
+
+                <div id="slots-container" class="slots-container hidden">
+                    <h4>Available Time Slots</h4>
+                    <div id="slots-grid" class="slots-grid"></div>
+                </div>
+
+                <div id="booking-form-container" class="booking-form-container hidden">
+                    <h4>Enter Details</h4>
+                    <input type="text" id="booking-name" class="input-field" placeholder="Your Name" required>
+                    <input type="email" id="booking-email" class="input-field" placeholder="Your Email" required>
+                    <button id="confirm-booking-btn" class="btn btn-primary">Confirm Booking</button>
+                </div>
+
+                <div id="booking-status" class="booking-status hidden"></div>
+            </section>
+
+            <footer class="sidebar-links">
+                <a href="https://github.com/yashkhunteta" target="_blank" class="link-item">GitHub</a>
+                <a href="https://linkedin.com/in/yashkhunteta" target="_blank" class="link-item">LinkedIn</a>
+                <a href="mailto:yashkhunteta1234@gmail.com" class="link-item">Email</a>
+            </footer>
+        </aside>
+
+        <!-- Right Column: Interactive Chat Bot -->
+        <main class="chat-section glass">
+            <header class="chat-header">
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">AI Representative Online</span>
+                </div>
+                <h2>Chat with Yash's Assistant</h2>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="message system-message">
+                    <p>👋 Hello! I am Yash Khunteta's AI Representative. I have complete access to his resume, project repositories, and real calendar.</p>
+                    <p>Feel free to ask me about his technical skills, background, details of his project portfolios (like <strong>AttendAI</strong>, <strong>peoplegpt-100x</strong>, or <strong>brewpass-saas</strong>), or book a meeting directly!</p>
+                </div>
+            </div>
+
+            <!-- Suggestion chips -->
+            <div class="suggestions-bar">
+                <button class="chip" onclick="sendSuggestion('Why is Yash the right fit for a Generative AI role?')">Why hire Yash?</button>
+                <button class="chip" onclick="sendSuggestion('Tell me about the AttendAI project tech stack and tradeoffs.')">AttendAI Tech Stack</button>
+                <button class="chip" onclick="sendSuggestion('Explain the tradeoffs and purpose of peoplegpt-100x.')">peoplegpt-100x details</button>
+                <button class="chip" onclick="sendSuggestion('What would you do differently on brewpass-saas?')">brewpass-saas tradeoffs</button>
+            </div>
+
+            <!-- Input area -->
+            <footer class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message or ask to book an interview..." autocomplete="off">
+                <button id="send-btn" class="btn btn-primary">Send</button>
+            </footer>
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
